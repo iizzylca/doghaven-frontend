@@ -1,0 +1,75 @@
+body {
+    margin: 0;
+    background-color: ivory ;
+    background-image: url('https://media0.giphy.com/media/26BRGvcRTuqWhoLzW/giphy.gif?cid=ecf05e47pnv5f795f7wgxbtagdqdcgz1efg0o1wsvctq3blz&rid=giphy.gif') ;
+    background-size: cover ;
+    display: grid;
+    grid-template-areas:
+        "top top"
+        "nav main"
+    ;
+}
+
+header {
+    grid-area: top;
+    text-align: center;
+    font-family: Georgia, Times, "Times New Roman", serif;
+    font-size: 25px;
+}
+
+#dog-bar {
+    height: 15vh;
+    background: ivory;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    overflow-x: scroll;
+}
+
+#dog-bar span {
+    margin-right:0.5em;
+    height: 90%;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2em;
+    border: 1px hidden grey;
+}
+
+nav {
+    grid-area: nav ;
+    border: 1px solid grey;
+}
+
+main {
+    grid-area: main;
+    border: 1px solid grey;
+    width: auto;
+    height: auto;
+}
+
+#dog-image {
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+}
+
+#dog-image img {
+    border: hidden;
+    border-radius: 2em;
+    width: auto;
+    height: 450px;
+}
+
+#dog-image p {
+    text-align: center;
+}
+
+#like-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2em;
+    
+}
