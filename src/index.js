@@ -19,7 +19,11 @@
 - Slap everything to the DOM. *Check!*
 - Create a like Btn, and a Delete Btn. *Check!*
 - addEventListeners for Update, and Delete Requests. (Update: Increase-Like) (Delete: Delete-Dog-Object). *Check!*
-- Create a Submit Form to Create a Dog. 
+- Create a Submit Form to Create a Dog. *Check!*
+
+2. (Rescue Container)
+
+-Same steps for the rescue Container. 2. *Check!*
 
 */
 
@@ -53,28 +57,6 @@ const renderRescues = (rescuesObj) => {
         renderRescue(rescue)
     });
 }
-
-const renderOptions = (rescuesObj) => {
-    console.log(rescuesObj)
-    rescuesTag.innerHTML =""
-    rescuesObj.forEach(rescueEle => {
-        renderOneOption(rescueEle)
-    })
-    
-}
-
-
-const rescuesTag = document.querySelector('#rescues')
-
-const renderOneOption = (rescueEle) => {
-    
-    const option = document.createElement('option')
-    option.value = rescueEle.name
-    option.textContent = rescueEle.name
-    rescuesTag.append(option)
-
-}
-
 const renderRescue = (rescue) => {
     // console.log(rescue)
     const rescueUl = document.createElement('ul')
@@ -101,6 +83,26 @@ const renderRescue = (rescue) => {
     
 }
 
+const renderOptions = (rescuesObj) => {
+    console.log(rescuesObj)
+    rescuesTag.innerHTML =""
+    rescuesObj.forEach(rescueEle => {
+        renderOneOption(rescueEle)
+    })
+    
+}
+
+const rescuesTag = document.querySelector('#rescues')
+
+const renderOneOption = (rescueEle) => {
+    
+    const option = document.createElement('option')
+    option.value = rescueEle.name
+    option.textContent = rescueEle.name
+    rescuesTag.append(option)
+
+}
+
 const renderDogs = (dogsObj) => {
     dogsObj.forEach(dog => {
         renderDog(dog)
@@ -125,7 +127,7 @@ const dogRescue = document.createElement('li')
 
 const renderOneDog = (oneDogObj) => {
 
-    console.log(oneDogObj)
+    // console.log(oneDogObj)
     img.src = oneDogObj.image
     img.alt = oneDogObj.name
     dogLikes.textContent = oneDogObj.like
@@ -143,13 +145,10 @@ const renderOneDog = (oneDogObj) => {
     dogDesc.textContent = oneDogObj.description
     dogRescue.textContent = oneDogObj.rescue.name
     dogRescue.dataset.id = oneDogObj.rescue.id
-    console.log(dogInfo, infoUl)
     
-    // dogCont.append(dogInfo)
     dogInfo.append(infoUl)
     infoUl.append(dogName, dogBreed, dogAge, dogSex, dogDesc, dogRescue)
 
-    console.log('third')
 }  
 
 // * Event Listeners * 
@@ -173,7 +172,6 @@ button.addEventListener('click' , e => {
         id: dogId,
         like: counter
     }
-
     updateLikes(dogId, newLike)
 
 })
@@ -193,8 +191,6 @@ rescueCont.addEventListener('click', e => {
     deleteRescue(deleteRescueId, ulTag)
     // console.log(deleteRescueId)
 })
-
-
 
 dogForm.addEventListener('submit', e => {
     e.preventDefault()
@@ -220,7 +216,6 @@ dogForm.addEventListener('submit', e => {
         rescue: rescue
     }
     newDog(addDog)
-
     e.target.reset()
 
 })
@@ -236,14 +231,10 @@ rescueForm.addEventListener('submit', e => {
         location: location, 
         organization: organization
     }
-    
-    newRescue(newForm)
-    
+    newRescue(newForm) 
     e.target.reset()
 
-
 })
-
 
 // * Fetch Requests 
 
@@ -252,6 +243,7 @@ const getRescue = () => {
     .then(r => r.json())
     .then(rescuesObj => {
         renderOptions(rescuesObj)
+
         renderRescues(rescuesObj)
     })
 }
@@ -266,10 +258,8 @@ const getDogs = () => {
 
 const getOneDog = (id) => {
     fetch(`${dogsUrl}/${id}`)
-    .then( r => r.json())
+    .then(r => r.json())
     .then(oneDogObj => {
-        // console.log(oneDogObj)
-        // console.log('second')
         renderOneDog(oneDogObj)
     })
 }
@@ -288,22 +278,17 @@ const updateLikes = (id, newLike) => {
         console.log('fourth')
         dogLikes.textContent = updatedDog.like
     })
-    // .catch(()=>{
-    //     alert('Could Not Update')
-    // })
 }
 
 const deleteDog = (id, spanTag) => {
     fetch(`${dogsUrl}/${id}`, {
         method: "DELETE", 
-
     })
     .then(() => {
         spanTag.remove()
         imgCont.style.display= 'none'
     })
 }
-
 const newDog = (addDog) => {
     fetch(`${dogsUrl}`, {
         method: "POST", 
@@ -320,11 +305,9 @@ const newDog = (addDog) => {
     })
 }
 
-
 const deleteRescue = (id, ulTag) => {
     fetch(`${rescuesUrl}/${id}`, {
         method: "DELETE", 
-
     })
     .then(() => {
         ulTag.remove()
@@ -338,7 +321,6 @@ const newRescue = (newForm) => {
         method: 'POST', 
         headers: {
             "Content-Type": "application/json"
-
         },
         body: JSON.stringify(newForm)
 
