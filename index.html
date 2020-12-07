@@ -8,39 +8,65 @@
     <title>DogHaven</title> 
 </head>
 <body>
-
-    <header>
-        <div class="header">
+    <header id="header-container">
+        <div id="header-title">
             <h2>DogHaven</h2>
         </div>
-        
-        <div id="dog-bar">
-
-        </div>
-
     </header>
+    <div id="dog-bar">
+    </div>
     
-    <nav>
+    <nav class="nav-container">
         <div id="adoption-center-info">
-            
+        </div>
+        <div id="add-rescue-form">
+            <form id="rescue-form" class="form-class">
+                <br>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="..."><br>
+                <label for="location"> Location:</label>
+                <input type="text" id="location" name="location" placeholder="..."><br>
+                <label for="organization">Organization:</label>
+                <input type="text" id="organization" name="organization" placeholder="..."><br><br>
+                <button type="submit" name="action" value="submit">Submit</button>
+            </form> 
         </div>
     </nav>
 
     <main class="main-container">
         <div id="dog-image">
             <img src="" alt="">
-            <p>0 Likes</p>
-            <div id="like-btn">
-                <button>❤️</button>
+            <div class="like-btn">
+                <p class="like-num"></p>
+                <button class="like-heart"></button>
+                <button class="delete-dog"></button>
+            </div>
+            <hr>
+            <div id="dog-info">
             </div>
         </div>
-
-        <hr/>
-        
-        <div id="dog-info">
-            <ul>
-                
-            </ul>
+            <hr>
+        <div id="add-dog-form">
+            <form id="form-class">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="...">
+                <label for="breed"> Breed Name:</label>
+                <input type="text" id="breed" name="breed" placeholder="..."><br>
+                <label for="age">Age:</label>
+                <input type="text" id="age" name="age" placeholder="...">
+                <label for="sex"> Female/Male:</label>
+                <input type="text" id="sex" name="sex" placeholder="..."><br>
+                <label for="image"> Dog Image:</label>
+                <input type="text" id="image" name="image" placeholder="...">
+                <label for="description">Description:</label>
+                <input type="text" id="description" name="description" placeholder="..."><br>
+                <!-- <label for="likes">Like:</label>
+                <input type="text" id="likes" name="likes" placeholder="..."> -->
+                <label for="rescue-name"> Rescue:</label>
+                <select id="rescues" name="rescues">
+                </select><br><br>
+                <button type="submit" name="action" value="submit">Submit</button>
+            </form> 
         </div>
     </main>
 

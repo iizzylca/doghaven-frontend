@@ -1,25 +1,46 @@
 body {
     margin: 0;
-    background-color: ivory ;
-    background-image: url('https://media0.giphy.com/media/26BRGvcRTuqWhoLzW/giphy.gif?cid=ecf05e47pnv5f795f7wgxbtagdqdcgz1efg0o1wsvctq3blz&rid=giphy.gif') ;
-    background-size: cover ;
+    background-color: rgb(138, 208, 255) ;
     display: grid;
     grid-template-areas:
-        "top top"
-        "nav main"
+    "top top top top top top"
+    "div div div div div div "
+    "nav nav main main main main"
     ;
 }
 
-header {
+
+
+#header-container {
     grid-area: top;
+    /* text-align: center; */
+    background-image: url('https://media.giphy.com/media/q139C0QElkaSk/giphy.gif') ;
+    background-size: cover ;
+    
+    /* background: inherit;
+    -webkit-background-clip: text;
+            background-clip: text;
+    color: transparent;
+    font: 25 10vmin/2.5vh cookie, cursive;
     text-align: center;
-    font-family: Georgia, Times, "Times New Roman", serif;
-    font-size: 25px;
+    filter: invert(1) grayscale(1) contrast(9); */
+}
+
+#header-title {
+    text-align: center;
+    background: inherit;
+    -webkit-background-clip: text;
+            background-clip: text;
+    color: transparent;
+    font: 25 10vmin/25vh cookie, cursive;
+    text-align: center;
+    filter: invert(1) grayscale(1) contrast(5);
 }
 
 #dog-bar {
+    grid-area: div;
     height: 15vh;
-    background: ivory;
+    background: rgb(177, 135, 255);
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -27,6 +48,7 @@ header {
 }
 
 #dog-bar span {
+    
     margin-right:0.5em;
     height: 90%;
     width: 20%;
@@ -34,16 +56,52 @@ header {
     justify-content: center;
     align-items: center;
     border-radius: 2em;
-    border: 1px hidden grey;
+    border: 1px solid rgb(138, 208, 255);
 }
 
-nav {
+.nav-container {
+    background: url('https://i.pinimg.com/originals/18/9f/7f/189f7fe8777ee5adb538d6ae186ab64e.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
     grid-area: nav ;
+    grid-column-start: 1;
+    grid-column-end: 2;
     border: 1px solid grey;
+
+}
+
+
+.li-list {
+    font-family: Georgia, Times, "Times New Roman", serif;
+    font-size: 25px;
+    font-style: italic;
+    color: black;
+    list-style-type: none;
+    /* mix-blend-mode: difference; */
+}
+
+.delete {
+    padding: 0;
+    border: none;
+    background: none;
+}
+
+.p-tag-one {
+    font-family: Georgia, Times, "Times New Roman", serif;
+    font-size: 15px;
+    font-style: italic;
+}
+
+.p-tag-two {
+    font-family: Georgia, Times, "Times New Roman", serif;
+    font-size: 15px;
+    font-style: italic;
 }
 
 main {
     grid-area: main;
+    grid-column-start: 2;
+    grid-column-end: 7;
     border: 1px solid grey;
     width: auto;
     height: auto;
@@ -56,20 +114,24 @@ main {
 }
 
 #dog-image img {
+
     border: hidden;
     border-radius: 2em;
     width: auto;
     height: 450px;
 }
 
-#dog-image p {
+.like-btn p {
     text-align: center;
 }
 
-#like-btn {
+.like-btn button {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 0;
+    border: none;
+    background: none;
     height: 2em;
     
 }
