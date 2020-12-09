@@ -40,7 +40,7 @@ body {
 #dog-bar {
     grid-area: div;
     height: 15vh;
-    background: rgb(177, 135, 255);
+    background: rgb(89, 188, 255);
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -56,7 +56,9 @@ body {
     justify-content: center;
     align-items: center;
     border-radius: 2em;
-    border: 1px solid rgb(138, 208, 255);
+    font-size: 18px ;
+    border: 2px solid rgb(99, 148, 255);
+    box-shadow: 5px 10px 18px #6e5eff;
 }
 
 .nav-container {

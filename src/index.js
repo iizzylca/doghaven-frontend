@@ -68,7 +68,7 @@ const renderRescue = (rescue) => {
     rescueUl.className = 'rescue-ul'
     deleteBtn.className = 'delete'
     deleteBtn.dataset.id = rescue.id
-    deleteBtn.textContent = '❎'
+    deleteBtn.textContent = '❎' + ' Delete'
     rescueLi.className = 'li-list'
     pTag1.className = 'p-tag-one'
     pTag2.className = 'p-tag-two'
@@ -131,8 +131,8 @@ const renderOneDog = (oneDogObj) => {
     img.src = oneDogObj.image
     img.alt = oneDogObj.name
     dogLikes.textContent = oneDogObj.like
-    button.textContent = ' ❤️ '
-    deleteDogButton.textContent = '❎'
+    button.textContent = ' ❤️ ' + ' Like'
+    deleteDogButton.textContent = '❎' + ' Delete'
 
     infoUl.className = 'information'
     infoUl.dataset.id = oneDogObj.id
